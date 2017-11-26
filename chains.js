@@ -252,9 +252,6 @@ function init() {
       });
       object.rotation.x = Math.PI;
       object.rotation.z = Math.PI;
-      object.scale.x = 40;
-      object.scale.y = 40;
-      object.scale.z = 40;
       logoMesh = object;
       scene.add(object);
     });
