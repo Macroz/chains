@@ -1,8 +1,8 @@
-# Winter Lights - Chains
+# Demoscene - Three.js - Winter Light Chains
 
-[Winter Lights Visualization](http://macroz.github.io/chains/).
+[Live Demo](http://macroz.github.io/chains/).
 
-![Winter Lights](chains.png?raw=true)
+![Winter Light Chains](chains.png?raw=true)
 
 ## License
 
