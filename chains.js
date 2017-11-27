@@ -203,7 +203,8 @@ function init() {
   uniforms = {
     texture: { type: "t", value: THREE.ImageUtils.loadTexture('sphere.png') },
     uCameraPos: { type: "3f", value: THREE.Vector3(0, 0, 0) },
-    uReflection: { type: "1f", value: 0.0 }
+    uReflection: { type: "1f", value: 0.0 },
+    uTime: { type: "1f", value: 0.0 }
   };
 
   shaderMaterial = new THREE.ShaderMaterial({
@@ -395,6 +396,8 @@ function animate() {
 }
 
 function render() {
+  var t = clock.getElapsedTime();
+
   if (logoMesh || textMesh) {
     shaderMaterial.uniforms.uCameraPos.value = new THREE.Vector3(0, 0, 0);
     var reflectionDistance = camera.position.distanceTo(new THREE.Vector3(0, 0, 0));
@@ -418,6 +421,7 @@ function render() {
 
   shaderMaterial.uniforms.uCameraPos.value = camera.position;
   shaderMaterial.uniforms.uReflection.value = 0.0;
+  shaderMaterial.uniforms.uTime.value = t;
 
   renderer.render(scene, camera);
 }

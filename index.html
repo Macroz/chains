@@ -81,6 +81,7 @@
     <script type="x-shader/x-vertex" id="vertexshader">
       uniform vec3 uCameraPos;
       uniform float uReflection;
+      uniform float uTime;
       attribute float alpha;
       attribute float size;
       attribute vec3 color;
@@ -89,7 +90,10 @@
       varying vec3 vColor;
 
       void main() {
-      vec3 pposition = center + position;
+      float s = (position.z - 512.0) * 0.02;
+      s = s * s * 0.1;
+      float time = (uTime + center.x) * 0.05;
+      vec3 pposition = center + position + vec3(s * cos(time), 0, 0);
       vec4 mvPosition = modelViewMatrix * vec4(pposition, 1.0);
 
       float cameraDist = distance(pposition.xyz, uCameraPos) + uReflection;
