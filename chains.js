@@ -105,7 +105,7 @@ function createChain(n, size, angle, speed, spread) {
     colors[i * 3 + 2] = 1.0;
 
     var s = Math.pow(512.0, Math.pow(f * Math.random(), 0.3));
-    alphas[i] = 1.0;//Math.pow(alphas[i - clouds], 0.5);
+    alphas[i] = 2.0;//Math.pow(alphas[i - clouds], 0.5);
     //alphas[i] = 1.0;//0.2 + Math.random() * 0.8;
     sizes[i] = size / 8.0;//Math.random() * Math.random() * 8.0;
     centers[i * 3 + 0] = centers[(i - clouds) * 3 + 0];

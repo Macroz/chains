@@ -100,7 +100,7 @@
       float pointScale = 0.5 * 1024.0 * 1024.0 / cameraDist / cameraDist;
       pointScale = clamp(pointScale, 0.1, 1.0);
 
-      vAlpha = clamp(0.5 * alpha * pointScale, 0.1, 1.0);
+      vAlpha = clamp(alpha * pointScale, 0.1, 1.0);
       vColor = color;
 
       gl_PointSize = 4.0 * size * pointScale;
